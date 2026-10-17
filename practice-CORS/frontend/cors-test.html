@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Test CORS </title>
+</head>
+
+<body>
+    <h1>CORS Test Page</h1>
+    <button onclick="testCors()">Check</button>
+    <p id="result"></p>
+    <script>
+        async function testCors() {
+            const elementId = document.getElementById('result')
+            try {
+                const result = await fetch("http://localhost:3000/test-cors")
+
+                const data = await result.json()
+                console.log(data)
+                elementId.textContent = JSON.stringify(data.message)
+            } catch (e) {
+                console.log(e)
+                elementId.textContent = e
+            }
+        }
+    </script>
+</body>
+
+
+</html>
