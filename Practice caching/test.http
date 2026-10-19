@@ -1,0 +1,13 @@
+
+### Test students API
+GET http://localhost:3000/students
+
+### Test Student put API
+PUT  http://localhost:3000/update-students
+Content-Type: application/json
+
+{
+    "name": "Pruthvi",
+    "age":22
+}
+
